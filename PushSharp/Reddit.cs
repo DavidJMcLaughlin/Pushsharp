@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PushSharp
 {
-    public class Class1
+    public class Reddit
     {
     }
 }
