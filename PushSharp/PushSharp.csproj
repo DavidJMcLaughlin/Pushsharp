@@ -49,10 +49,18 @@
     <Compile Include="Data\UserContent.cs" />
     <Compile Include="Reddit.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Search\MultiValueParameter.cs" />
+    <Compile Include="Search\SingleValueParameter.cs" />
+    <Compile Include="Search\ValueParameter.cs" />
+    <Compile Include="StringExtensions.cs" />
+    <Compile Include="Web\CommentSearchAgent.cs" />
+    <Compile Include="Search\ICommentNameValuePair.cs" />
+    <Compile Include="Search\INameValuePair.cs" />
+    <Compile Include="Search\ISubmissionNameValuePair.cs" />
+    <Compile Include="Web\SearchAgent.cs" />
+    <Compile Include="Web\SubmissionSearchAgent.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Web\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
