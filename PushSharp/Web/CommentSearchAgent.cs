@@ -1,4 +1,6 @@
-﻿using System;
+﻿using PushSharp.Data;
+using PushSharp.Search;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,5 +10,8 @@ namespace PushSharp.Web
 {
     public class CommentSearchAgent : RedditSearchAgent
     {
+        public CommentSearchAgent()
+        {
+        }
     }
 }

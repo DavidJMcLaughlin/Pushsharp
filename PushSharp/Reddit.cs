@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PushSharp.Web;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,5 +9,7 @@ namespace PushSharp
 {
     public class Reddit
     {
+        //public SubmissionSearchAgent Submission { get; private set; } = new SubmissionSearchAgent();
+        //public CommentSearchAgent Comment { get; private set; } = new CommentSearchAgent();
     }
 }

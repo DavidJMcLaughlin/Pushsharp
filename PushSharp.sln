@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.28010.2019
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PushSharp", "PushSharp\PushSharp.csproj", "{F740060D-6251-4BED-B947-6590BD8F24AE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PushSharpTests", "PushSharpTests\PushSharpTests.csproj", "{9391FC2C-4DA0-4383-90E0-82AC60B84CE1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{F740060D-6251-4BED-B947-6590BD8F24AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F740060D-6251-4BED-B947-6590BD8F24AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F740060D-6251-4BED-B947-6590BD8F24AE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9391FC2C-4DA0-4383-90E0-82AC60B84CE1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9391FC2C-4DA0-4383-90E0-82AC60B84CE1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9391FC2C-4DA0-4383-90E0-82AC60B84CE1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9391FC2C-4DA0-4383-90E0-82AC60B84CE1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

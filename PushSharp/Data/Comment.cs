@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using PushSharp.Search;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -29,5 +30,7 @@ namespace PushSharp.Data
 
         [JsonProperty("parent_id")]
         public string ParentId { get; set; }
+
+        public string RelativeEndpoint => "search/comment/";
     }
 }

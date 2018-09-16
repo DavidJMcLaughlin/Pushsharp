@@ -9,7 +9,7 @@ namespace PushSharp.Search
     public interface INameValuePair
     {
         string Name { get; }
-        string GetValue();
+        string GetValueAsString();
 
         string ToString(string separator);
     }

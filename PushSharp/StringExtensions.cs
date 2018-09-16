@@ -22,28 +22,5 @@ namespace PushSharp
         {
             return part1.Combine(part2, separatorText, string.Empty, string.Empty);
         }
-
-        internal static string Combine(this string[] array, string separatorText)
-        {
-            if (array == null || array.Length < 1)
-            {
-                throw new ArgumentNullException(nameof(array), "Argument is null or empty");
-            }
-
-            if (array.Length == 1)
-            {
-                // Only a single value array
-                return array[0];
-            }
-
-            var output = array[0];
-
-            for (int i = 1; i < array.Length; i++)
-            {
-                output = output.Combine(array[i], separatorText);
-            }
-
-            return output;
-        }
     }
 }

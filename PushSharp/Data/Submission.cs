@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using PushSharp.Search;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -77,5 +78,7 @@ namespace PushSharp.Data
 
         [JsonProperty("whitelist_status")]
         public string WhitelistStatus { get; set; }
+
+        public string RelativeEndpoint => "search/submission/";
     }
 }

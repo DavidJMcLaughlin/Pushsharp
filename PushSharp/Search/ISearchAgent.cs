@@ -6,10 +6,8 @@ using System.Threading.Tasks;
 
 namespace PushSharp.Search
 {
-    public abstract class IntValueParameter : StringValueParameter
+    public interface ISearchAgent
     {
-        public IntValueParameter(int value) : base(value.ToString())
-        {
-        }
+        T[] GetResults<T>(IEnumerable<INameValuePair> searchParameters);
     }
 }

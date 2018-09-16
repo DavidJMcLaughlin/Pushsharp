@@ -4,17 +4,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PushSharp.Search
+namespace PushSharp.Search.Query
 {
     public abstract class ValueParameter : INameValuePair
     {
-        public abstract string Name { get; }
+        public abstract string Name { get; protected set; }
 
         public virtual string ToString(string separator)
         {
-            return (Name + separator + GetValue());
+            return (Name + separator + GetValueAsString());
         }
 
-        public abstract string GetValue();
+        public abstract string GetValueAsString();
     }
 }
