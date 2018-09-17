@@ -6,6 +6,10 @@ using System.Threading.Tasks;
 
 namespace PushSharp.Search.Query
 {
+    /// <summary>
+    /// A url parameter that turns a collection of values into a comma separated string
+    /// </summary>
+    /// <typeparam name="T">The type this object should store/accept</typeparam>
     public class MultiValueParameter<T> : ValueParameter
     {
         public MultiValueParameter(string name, T[] values)

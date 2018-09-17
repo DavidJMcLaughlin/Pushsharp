@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace PushSharp.Search.Query
 {
+    /// <summary>
+    /// Url parameter base class, designed to be a key value pair that easily formats to a url get parameter
+    /// </summary>
     public abstract class ValueParameter : INameValuePair
     {
         public abstract string Name { get; protected set; }

@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace PushSharp.Search.Query
 {
+    /// <summary>
+    /// A url parameter object that is limited to string values
+    /// </summary>
     public class StringValueParameter : ValueParameter
     {
         public StringValueParameter(string name) : this(name, string.Empty)

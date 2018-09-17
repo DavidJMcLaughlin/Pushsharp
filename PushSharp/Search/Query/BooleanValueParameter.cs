@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace PushSharp.Search.Query
 {
+    /// <summary>
+    /// A url parameter object that is limited to bool values
+    /// </summary>
     public class BooleanValueParameter : StringValueParameter
     {
         public BooleanValueParameter(string name, bool value) : base(name, value.ToString().ToLowerInvariant())

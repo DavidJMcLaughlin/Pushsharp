@@ -53,6 +53,7 @@
     <Compile Include="Reddit.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Search\Query\BooleanValueParameter.cs" />
+    <Compile Include="Search\Query\PrefabParameters\LimitParameter.cs" />
     <Compile Include="Search\Query\PrefabParameters\AfterIdParameter.cs" />
     <Compile Include="Search\Query\PrefabParameters\AfterParameter.cs" />
     <Compile Include="Search\Query\PrefabParameters\AuthorFlairCssClassParameter.cs" />
@@ -102,7 +103,7 @@
     <Compile Include="Search\ICommentNameValuePair.cs" />
     <Compile Include="Search\INameValuePair.cs" />
     <Compile Include="Search\ISubmissionNameValuePair.cs" />
-    <Compile Include="Web\SearchAgent.cs" />
+    <Compile Include="Web\RedditSearchAgent.cs" />
     <Compile Include="Web\SubmissionSearchAgent.cs" />
   </ItemGroup>
   <ItemGroup />

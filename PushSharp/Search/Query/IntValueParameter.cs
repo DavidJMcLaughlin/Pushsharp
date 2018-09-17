@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace PushSharp.Search.Query
 {
+    /// <summary>
+    /// A url parameter object that is limited to int values
+    /// </summary>
     public class IntValueParameter : StringValueParameter
     {
         public IntValueParameter(string name, int value) : base(name, value.ToString())

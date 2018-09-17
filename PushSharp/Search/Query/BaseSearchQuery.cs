@@ -18,6 +18,7 @@ namespace PushSharp.Search.Query
 
         public string RelativePath { get; protected set; }
 
+        public LimitParameter Limit { get; set; }
         public SortEnumValueParameter Sort { get; set; }
         public SortTypeEnumValueParameter SortType { get; set; }
         public AfterParameter AfterDateTime { get; set; }
