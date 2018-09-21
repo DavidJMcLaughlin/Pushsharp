@@ -1,50 +1,56 @@
 ﻿using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
-using PushSharp.Search;
+using PushSharp.Data;
 using PushSharp.Search.Query;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace PushSharp.Web
 {
-    public abstract class RedditSearchAgent
+    public class RedditSearchAgent
     {
-        public RedditSearchAgent(BaseSearchQuery query)
+        public RedditSearchAgent(IRetrieveHttpContent httpContentDownloader)
         {
-            Query = query;
+            HttpContentDownloader = httpContentDownloader;
         }
 
-        public BaseSearchQuery Query { get; set; }
+        public IRetrieveHttpContent HttpContentDownloader { get; private set; }
 
-        protected WebClient _webClient = new WebClient();
-
-        protected List<T> GetResults<T>()
+        public List<Submission> SearchSubmissions(SubmissionSearchQuery query)
         {
-            var url = Query.GetRequestUrl();
-            var pageData = DownloadWebAddress(url);
+            return SearchPushshift<Submission>(query);
+        }
 
-            if (string.IsNullOrEmpty(pageData))
+        public List<Comment> SearchComments(CommentSearchQuery query)
+        {
+            return SearchPushshift<Comment>(query);
+        }
+
+        private List<T> SearchPushshift<T>(BaseSearchQuery query)
+        {
+            var url = query.GetRequestUrl();
+            var pageBytes = HttpContentDownloader.GetUrlContent(url);
+
+            if (pageBytes == null || pageBytes.Length == 0)
             {
                 throw new NullReferenceException($"Request returned no data for '{url}'");
             }
 
-            var jo = JObject.Parse(pageData);
+            var pageString = Encoding.UTF8.GetString(pageBytes);
+
+            var jo = JObject.Parse(pageString);
 
             if (!jo.HasValues)
             {
                 throw new JsonException($"Request returned an empty json string for '{url}'");
             }
 
-            return JsonConvert.DeserializeObject<List<T>>(jo["data"].ToString());
-        }
+            var jsonData = jo["data"].ToString();
 
-        protected string DownloadWebAddress(string url)
-        {
-            return _webClient.DownloadString(url);
+            return JsonConvert.DeserializeObject<List<T>>(jsonData);
         }
     }
 }
