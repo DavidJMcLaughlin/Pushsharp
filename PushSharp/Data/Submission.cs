@@ -78,7 +78,5 @@ namespace PushSharp.Data
 
         [JsonProperty("whitelist_status")]
         public string WhitelistStatus { get; set; }
-
-        public string RelativeEndpoint => "search/submission/";
     }
 }

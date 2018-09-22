@@ -30,7 +30,5 @@ namespace PushSharp.Data
 
         [JsonProperty("parent_id")]
         public string ParentId { get; set; }
-
-        public string RelativeEndpoint => "search/comment/";
     }
 }
