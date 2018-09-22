@@ -1,4 +1,4 @@
-﻿using PushSharp.Search.Query.PrefabParameters;
+﻿using PushSharp.Search.Query.RedditParameters;
 using System;
 using System.Collections.Generic;
 using System.Linq;

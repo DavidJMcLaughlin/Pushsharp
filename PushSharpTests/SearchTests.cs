@@ -1,6 +1,6 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using PushSharp.Search.Query;
-using PushSharp.Search.Query.PrefabParameters;
+using PushSharp.Search.Query.RedditParameters;
 using PushSharp.Web;
 using System;
 using System.Collections.Generic;

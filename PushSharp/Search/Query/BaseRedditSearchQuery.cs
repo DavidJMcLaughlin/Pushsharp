@@ -1,4 +1,4 @@
-﻿using PushSharp.Search.Query.PrefabParameters;
+﻿using PushSharp.Search.Query.RedditParameters;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -35,7 +35,7 @@ namespace PushSharp.Search.Query
         public EditedParameter Edited { get; set; }
         public AuthorParameter Author { get; set; }
         public DistinguishedEnumParameter Distinguished { get; set; }
-        public RetrievedParameter RetrievedOn { get; set; }
+        public RetrievedOnParameter RetrievedOn { get; set; }
         public LastUpdatedParameter LastUpdated { get; set; }
         public QueryParameter Query { get; set; }
         public IdParameter Id { get; set; }
