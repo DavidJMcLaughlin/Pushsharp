@@ -10,8 +10,8 @@ using System.Threading.Tasks;
 
 namespace PushSharp.Tests
 {
-    [TestClass()]
-    public class SearchTests
+    [TestClass]
+    public class SearchParameterTests
     {
         private const string NAME_VALUE_SEPARATOR = "=";
 
