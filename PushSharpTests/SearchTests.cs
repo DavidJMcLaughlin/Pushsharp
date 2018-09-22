@@ -77,7 +77,7 @@ namespace PushSharp.Tests
             return mockValue;
         }
 
-        internal class MockSearchQuery : BaseSearchQuery
+        internal class MockSearchQuery : BaseRedditSearchQuery
         {
             public MockSearchQuery(string path) : base(path)
             {

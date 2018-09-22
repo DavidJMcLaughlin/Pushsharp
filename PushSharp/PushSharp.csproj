@@ -86,7 +86,7 @@
     <Compile Include="Search\Query\IntValueParameter.cs" />
     <Compile Include="Search\ISearchAgent.cs" />
     <Compile Include="Search\Query\MultiValueParameter.cs" />
-    <Compile Include="Search\Query\BaseSearchQuery.cs" />
+    <Compile Include="Search\Query\BaseRedditSearchQuery.cs" />
     <Compile Include="Search\Query\CommentSearchQuery.cs" />
     <Compile Include="Search\Query\FlagValueParameter.cs" />
     <Compile Include="Search\Query\PrefabParameters\SubredditParameter.cs" />

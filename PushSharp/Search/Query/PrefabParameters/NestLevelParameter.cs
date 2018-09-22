@@ -11,5 +11,10 @@ namespace PushSharp.Search.Query.PrefabParameters
         public NestLevelParameter(int value) : base("nest_level", value)
         {
         }
+
+        public static implicit operator NestLevelParameter(int value)
+        {
+            return new NestLevelParameter(value);
+        }
     }
 }

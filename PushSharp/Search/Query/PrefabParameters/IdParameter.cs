@@ -15,5 +15,15 @@ namespace PushSharp.Search.Query.PrefabParameters
         public IdParameter(string[] ids) : base("id", ids)
         {
         }
+
+        public static implicit operator IdParameter(string value)
+        {
+            return new IdParameter(value);
+        }
+
+        public static implicit operator IdParameter(string[] value)
+        {
+            return new IdParameter(value);
+        }
     }
 }

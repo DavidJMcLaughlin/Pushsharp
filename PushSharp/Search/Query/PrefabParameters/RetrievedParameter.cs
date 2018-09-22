@@ -11,5 +11,10 @@ namespace PushSharp.Search.Query.PrefabParameters
         public RetrievedParameter(DateTime value) : base("retrieved_on", value)
         {
         }
+
+        public static implicit operator RetrievedParameter(DateTime value)
+        {
+            return new RetrievedParameter(value);
+        }
     }
 }

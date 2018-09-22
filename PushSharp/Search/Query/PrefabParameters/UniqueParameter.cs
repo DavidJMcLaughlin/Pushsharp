@@ -11,5 +11,15 @@ namespace PushSharp.Search.Query.PrefabParameters
         public UniqueParameter() : base("unique")
         {
         }
+
+        public static implicit operator UniqueParameter(bool value)
+        {
+            if (value)
+            {
+                return new UniqueParameter();
+            }
+
+            return null;
+        }
     }
 }

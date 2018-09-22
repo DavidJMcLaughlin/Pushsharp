@@ -11,5 +11,10 @@ namespace PushSharp.Search.Query.PrefabParameters
         public BeforeIdParameter(string value) : base("before_id", value)
         {
         }
+
+        public static implicit operator BeforeIdParameter(string value)
+        {
+            return new BeforeIdParameter(value);
+        }
     }
 }

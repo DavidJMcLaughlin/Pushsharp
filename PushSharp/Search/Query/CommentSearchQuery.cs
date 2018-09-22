@@ -7,7 +7,10 @@ using System.Threading.Tasks;
 
 namespace PushSharp.Search.Query
 {
-    public class CommentSearchQuery : BaseSearchQuery
+    /// <summary>
+    /// A Pushshift query object thats only applicable to the comment search endpoint
+    /// </summary>
+    public class CommentSearchQuery : BaseRedditSearchQuery
     {
         public CommentSearchQuery() : base(RELATIVE_URL_PART)
         {

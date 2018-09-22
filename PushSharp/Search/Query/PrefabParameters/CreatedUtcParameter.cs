@@ -15,5 +15,15 @@ namespace PushSharp.Search.Query.PrefabParameters
         public CreatedUtcParameter(int[] createdUtcRange) : base("created_utc", createdUtcRange)
         {
         }
+
+        public static implicit operator CreatedUtcParameter(int value)
+        {
+            return new CreatedUtcParameter(value);
+        }
+
+        public static implicit operator CreatedUtcParameter(int[] value)
+        {
+            return new CreatedUtcParameter(value);
+        }
     }
 }

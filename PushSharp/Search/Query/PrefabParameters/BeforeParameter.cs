@@ -11,5 +11,10 @@ namespace PushSharp.Search.Query.PrefabParameters
         public BeforeParameter(DateTime value) : base("before", value)
         {
         }
+
+        public static implicit operator BeforeParameter(DateTime value)
+        {
+            return new BeforeParameter(value);
+        }
     }
 }

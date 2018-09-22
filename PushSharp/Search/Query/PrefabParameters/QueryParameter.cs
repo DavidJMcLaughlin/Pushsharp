@@ -11,5 +11,10 @@ namespace PushSharp.Search.Query.PrefabParameters
         public QueryParameter(string value) : base("q", value)
         {
         }
+
+        public static implicit operator QueryParameter(string value)
+        {
+            return new QueryParameter(value);
+        }
     }
 }

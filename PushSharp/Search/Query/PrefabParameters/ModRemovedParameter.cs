@@ -11,5 +11,10 @@ namespace PushSharp.Search.Query.PrefabParameters
         public ModRemovedParameter(bool value) : base("mod_removed", value)
         {
         }
+
+        public static implicit operator ModRemovedParameter(bool value)
+        {
+            return new ModRemovedParameter(value);
+        }
     }
 }

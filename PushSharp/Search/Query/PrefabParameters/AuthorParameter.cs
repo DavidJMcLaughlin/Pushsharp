@@ -15,5 +15,15 @@ namespace PushSharp.Search.Query.PrefabParameters
         public AuthorParameter(string[] authors) : base("author", authors)
         {
         }
+
+        public static implicit operator AuthorParameter(string value)
+        {
+            return new AuthorParameter(value);
+        }
+
+        public static implicit operator AuthorParameter(string[] value)
+        {
+            return new AuthorParameter(value);
+        }
     }
 }

@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace PushSharp.Search.Query
 {
-    public class SubmissionSearchQuery : BaseSearchQuery
+    /// <summary>
+    /// A Pushshift query object thats only applicable to the submission search endpoint
+    /// </summary>
+    public class SubmissionSearchQuery : BaseRedditSearchQuery
     {
         public SubmissionSearchQuery() : base(RELATIVE_URL_PART)
         {

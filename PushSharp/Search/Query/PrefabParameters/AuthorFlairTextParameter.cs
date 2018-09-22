@@ -11,5 +11,10 @@ namespace PushSharp.Search.Query.PrefabParameters
         public AuthorFlairTextParameter(string value) : base("author_flair_text", value)
         {
         }
+
+        public static implicit operator AuthorFlairTextParameter(string value)
+        {
+            return new AuthorFlairTextParameter(value);
+        }
     }
 }

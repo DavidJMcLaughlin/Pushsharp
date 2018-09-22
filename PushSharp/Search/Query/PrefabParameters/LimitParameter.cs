@@ -14,5 +14,10 @@ namespace PushSharp.Search.Query.PrefabParameters
         public LimitParameter(int value) : base("limit", value)
         {
         }
+
+        public static implicit operator LimitParameter(int value)
+        {
+            return new LimitParameter(value);
+        }
     }
 }

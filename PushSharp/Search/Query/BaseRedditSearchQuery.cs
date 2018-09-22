@@ -7,9 +7,12 @@ using System.Threading.Tasks;
 
 namespace PushSharp.Search.Query
 {
-    public abstract class BaseSearchQuery
+    /// <summary>
+    /// 
+    /// </summary>
+    public abstract class BaseRedditSearchQuery
     {
-        public BaseSearchQuery(string relativePath)
+        public BaseRedditSearchQuery(string relativePath)
         {
             RelativePath = relativePath;
         }

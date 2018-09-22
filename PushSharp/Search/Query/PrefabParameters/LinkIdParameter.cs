@@ -11,5 +11,10 @@ namespace PushSharp.Search.Query.PrefabParameters
         public LinkIdParameter(string value) : base("link_id", value)
         {
         }
+
+        public static implicit operator LinkIdParameter(string value)
+        {
+            return new LinkIdParameter(value);
+        }
     }
 }

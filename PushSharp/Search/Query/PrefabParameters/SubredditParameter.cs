@@ -15,5 +15,15 @@ namespace PushSharp.Search.Query.PrefabParameters
         public SubredditParameter(string[] subreddits) : base("subreddit", subreddits)
         {
         }
+
+        public static implicit operator SubredditParameter(string value)
+        {
+            return new SubredditParameter(value);
+        }
+
+        public static implicit operator SubredditParameter(string[] value)
+        {
+            return new SubredditParameter(value);
+        }
     }
 }

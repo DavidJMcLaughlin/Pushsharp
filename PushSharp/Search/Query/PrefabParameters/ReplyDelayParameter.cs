@@ -11,5 +11,10 @@ namespace PushSharp.Search.Query.PrefabParameters
         public ReplyDelayParameter(DateTime value) : base("reply_delay", value)
         {
         }
+
+        public static implicit operator ReplyDelayParameter(DateTime value)
+        {
+            return new ReplyDelayParameter(value);
+        }
     }
 }

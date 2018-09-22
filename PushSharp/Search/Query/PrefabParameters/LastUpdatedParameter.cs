@@ -11,5 +11,10 @@ namespace PushSharp.Search.Query.PrefabParameters
         public LastUpdatedParameter(DateTime value) : base("last_updated", value)
         {
         }
+
+        public static implicit operator LastUpdatedParameter(DateTime value)
+        {
+            return new LastUpdatedParameter(value);
+        }
     }
 }

@@ -11,5 +11,10 @@ namespace PushSharp.Search.Query.PrefabParameters
         public UtcHourOfWeekParameter(DateTime value) : base("utc_hour_of_week", value)
         {
         }
+
+        public static implicit operator UtcHourOfWeekParameter(DateTime value)
+        {
+            return new UtcHourOfWeekParameter(value);
+        }
     }
 }

@@ -12,6 +12,11 @@ namespace PushSharp.Search.Query.PrefabParameters
         public SortEnumValueParameter(SortValues value) : base("sort", typeof(SortValues), value, x => x.GetAttributeOfType<EnumToStringValueAttribute>().Value)
         {
         }
+
+        public static implicit operator SortEnumValueParameter(SortValues value)
+        {
+            return new SortEnumValueParameter(value);
+        }
     }
 
     public enum SortValues

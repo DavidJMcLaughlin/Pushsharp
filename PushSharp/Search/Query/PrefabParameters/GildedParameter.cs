@@ -15,5 +15,15 @@ namespace PushSharp.Search.Query.PrefabParameters
         public GildedParameter(int[] gildedCountRange) : base("gilded", gildedCountRange)
         {
         }
+
+        public static implicit operator GildedParameter(int value)
+        {
+            return new GildedParameter(value);
+        }
+
+        public static implicit operator GildedParameter(int[] value)
+        {
+            return new GildedParameter(value);
+        }
     }
 }

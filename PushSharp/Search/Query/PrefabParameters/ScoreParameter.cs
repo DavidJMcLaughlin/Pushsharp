@@ -15,5 +15,15 @@ namespace PushSharp.Search.Query.PrefabParameters
         public ScoreParameter(int[] values) : base("score", values)
         {
         }
+
+        public static implicit operator ScoreParameter(int value)
+        {
+            return new ScoreParameter(value);
+        }
+
+        public static implicit operator ScoreParameter(int[] value)
+        {
+            return new ScoreParameter(value);
+        }
     }
 }

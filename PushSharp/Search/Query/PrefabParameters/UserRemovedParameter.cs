@@ -11,5 +11,10 @@ namespace PushSharp.Search.Query.PrefabParameters
         public UserRemovedParameter(bool value) : base("user_removed", value)
         {
         }
+
+        public static implicit operator UserRemovedParameter(bool value)
+        {
+            return new UserRemovedParameter(value);
+        }
     }
 }

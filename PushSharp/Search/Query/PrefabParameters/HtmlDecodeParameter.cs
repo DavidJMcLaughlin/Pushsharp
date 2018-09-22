@@ -11,5 +11,15 @@ namespace PushSharp.Search.Query.PrefabParameters
         public HtmlDecodeParameter() : base("html_decode")
         {
         }
+
+        public static implicit operator HtmlDecodeParameter(bool value)
+        {
+            if (value)
+            {
+                return new HtmlDecodeParameter();
+            }
+
+            return null;
+        }
     }
 }

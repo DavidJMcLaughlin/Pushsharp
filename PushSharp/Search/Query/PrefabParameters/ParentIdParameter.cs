@@ -8,8 +8,13 @@ namespace PushSharp.Search.Query.PrefabParameters
 {
     public class ParentIdParameter : StringValueParameter
     {
-        public ParentIdParameter(string value) : base("", value)
+        public ParentIdParameter(string value) : base("parent_id", value)
         {
+        }
+
+        public static implicit operator ParentIdParameter(string value)
+        {
+            return new ParentIdParameter(value);
         }
     }
 }

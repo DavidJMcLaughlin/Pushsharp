@@ -10,6 +10,9 @@ using System.Threading.Tasks;
 
 namespace PushSharp.Web
 {
+    /// <summary>
+    /// This class encapsulates access to all Pushshift reddit endpoints
+    /// </summary>
     public class RedditSearchAgent
     {
         public RedditSearchAgent(IRetrieveHttpContent httpContentDownloader)
@@ -29,8 +32,13 @@ namespace PushSharp.Web
             return SearchPushshift<Comment>(query);
         }
 
-        private List<T> SearchPushshift<T>(BaseSearchQuery query)
+        private List<T> SearchPushshift<T>(BaseRedditSearchQuery query)
         {
+            if (query == null)
+            {
+                throw new ArgumentNullException(nameof(query));
+            }
+
             var url = query.GetRequestUrl();
             var pageBytes = HttpContentDownloader.GetUrlContent(url);
 

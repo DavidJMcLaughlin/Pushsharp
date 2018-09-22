@@ -11,6 +11,11 @@ namespace PushSharp.Search.Query.PrefabParameters
         public DistinguishedEnumParameter(DistinguishedValues value) : base("distinguished", typeof(DistinguishedValues), value)
         {
         }
+
+        public static implicit operator DistinguishedEnumParameter(DistinguishedValues value)
+        {
+            return new DistinguishedEnumParameter(value);
+        }
     }
 
     public enum DistinguishedValues

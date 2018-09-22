@@ -11,5 +11,10 @@ namespace PushSharp.Search.Query.PrefabParameters
         public AfterParameter(DateTime value) : base("after", value)
         {
         }
+
+        public static implicit operator AfterParameter(DateTime value)
+        {
+            return new AfterParameter(value);
+        }
     }
 }

@@ -11,5 +11,10 @@ namespace PushSharp.Search.Query.PrefabParameters
         public AuthorFlairCssClassParameter(string value) : base("author_flair_css_class", value)
         {
         }
+
+        public static implicit operator AuthorFlairCssClassParameter(string value)
+        {
+            return new AuthorFlairCssClassParameter(value);
+        }
     }
 }
