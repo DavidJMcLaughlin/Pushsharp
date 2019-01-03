@@ -1,4 +1,5 @@
-﻿using PushSharp.Search.Query.RedditParameters;
+﻿using PushSharp.Search.Query.BaseParameters;
+using PushSharp.Search.Query.RedditParameters;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,10 +9,13 @@ using System.Threading.Tasks;
 namespace PushSharp.Search.Query
 {
     /// <summary>
-    /// 
+    /// A base class that holds the shared functionality for building a search query to serialize and send to the pushshift api.
     /// </summary>
     public abstract class BaseRedditSearchQuery
     {
+        /// <summary>
+        /// </summary>
+        /// <param name="relativePath">The uri path relative to the 'https://pushshift.io/reddit' endpoint</param>
         public BaseRedditSearchQuery(string relativePath)
         {
             RelativePath = relativePath;
@@ -50,6 +54,10 @@ namespace PushSharp.Search.Query
         public AuthorFlairCssClassParameter AuthorFlairCssClass { get; set; }
         public AuthorFlairTextParameter AuthorFlairText { get; set; }
 
+        /// <summary>
+        /// Builds the pushshift api url from the values in this object's properties.
+        /// </summary>
+        /// <returns>A pushshift api url</returns>
         public string GetRequestUrl()
         {
             var url = PUSHSHIFT_REDDIT_ENDPOINT + (
@@ -62,8 +70,8 @@ namespace PushSharp.Search.Query
 
             if (urlParameters.Length > 0)
             {
-                url = (!url.EndsWith("?") || !url.EndsWith("/") ? url + "/" : url);
-                url = (url.EndsWith("?") ? url : url + "?");
+                url = (!url.EndsWith("?") || !url.EndsWith("/") ? url + "/" : url); // Ensure the url has a trailing '/'
+                url = (url.EndsWith("?") ? url : url + "?"); // Ensure the url has a trailing '?'
             }
 
             Uri output;
@@ -77,6 +85,10 @@ namespace PushSharp.Search.Query
             return url + urlParameters;
         }
 
+        /// <summary>
+        /// Builds the query parameter(s) part of the pushshift api url by reflecting on this classes public properties.
+        /// </summary>
+        /// <returns></returns>
         public string GetUrlParameters()
         {
             StringBuilder sb = new StringBuilder();
@@ -91,7 +103,7 @@ namespace PushSharp.Search.Query
                     var value = (ValueParameter)o;
                     if (value != null)
                     {
-                        sb.Append(Uri.EscapeUriString(value.ToString("=")));
+                        sb.Append(GetValueParameterAsHttpQueryString(value));
                         sb.Append("&");
                     }
                 }
@@ -104,6 +116,23 @@ namespace PushSharp.Search.Query
             }
 
             return sb.ToString();
+        }
+
+        /// <summary>
+        /// Takes a <see cref="ValueParameter"/> object and formats it into an http safe GET query string.
+        /// </summary>
+        /// <returns>a string in the format of '{key}={value}'</returns>
+        protected virtual string GetValueParameterAsHttpQueryString(ValueParameter target)
+        {
+            if (target == null)
+            {
+                throw new ArgumentNullException(nameof(target));
+            }
+
+            var delimitedQueryString = target.ToString("=");
+            var uriEscapedString = Uri.EscapeUriString(delimitedQueryString);
+
+            return uriEscapedString;
         }
     }
 }

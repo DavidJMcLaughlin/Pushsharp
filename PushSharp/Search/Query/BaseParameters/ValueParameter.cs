@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PushSharp.Search.Query
+namespace PushSharp.Search.Query.BaseParameters
 {
     /// <summary>
     /// Url parameter base class, designed to be a key value pair that easily formats to a url get parameter

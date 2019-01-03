@@ -1,5 +1,7 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using PushSharp.Extensions;
 using PushSharp.Search.Query;
+using PushSharp.Search.Query.BaseParameters;
 using PushSharp.Search.Query.RedditParameters;
 using PushSharp.Web;
 using System;

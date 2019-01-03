@@ -8,6 +8,9 @@ using System.Threading.Tasks;
 
 namespace PushSharp.Data
 {
+    /// <summary>
+    /// Encapsulates the properties that can be returned from the pushshift submission endpoint
+    /// </summary>
     public class Submission : UserContent
     {
         [JsonProperty("brand_safe")]

@@ -1,10 +1,11 @@
-﻿using System;
+﻿using PushSharp.Extensions;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PushSharp.Search.Query
+namespace PushSharp.Search.Query.BaseParameters
 {
     /// <summary>
     /// Turns a DateTime object into an int32 unix epoch value

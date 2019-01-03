@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PushSharp.Search.Query
+namespace PushSharp.Search.Query.BaseParameters
 {
     /// <summary>
     /// A flag value is a url get parameter with no value (e.g. www.example.com/search?flagParameter=&query=searchTextHere)

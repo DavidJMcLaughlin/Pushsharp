@@ -10,6 +10,9 @@ using System.Threading.Tasks;
 
 namespace PushSharp
 {
+    /// <summary>
+    /// An object to encapsulate the various Pushshift.io api endpoints
+    /// </summary>
     public class PushshiftApi
     {
         /// <summary>

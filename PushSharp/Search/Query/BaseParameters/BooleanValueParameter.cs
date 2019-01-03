@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PushSharp.Search.Query
+namespace PushSharp.Search.Query.BaseParameters
 {
     /// <summary>
     /// A url parameter object that is limited to bool values

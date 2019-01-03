@@ -8,6 +8,9 @@ using System.Threading.Tasks;
 
 namespace PushSharp.Data
 {
+    /// <summary>
+    /// Encapsulates the properties that can be returned from the pushshift comment endpoint
+    /// </summary>
     public class Comment : UserContent
     {
         [JsonProperty("body")]
