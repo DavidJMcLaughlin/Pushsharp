@@ -84,6 +84,11 @@ namespace PushSharp.Tests
             public MockSearchQuery(string path) : base(path)
             {
             }
+
+            public override BaseRedditSearchQuery DeepClone()
+            {
+                return new MockSearchQuery(RelativePath);
+            }
         }
 
         internal class MockParameter : MultiValueParameter<string>

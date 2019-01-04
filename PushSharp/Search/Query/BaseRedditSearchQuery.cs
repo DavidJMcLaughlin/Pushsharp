@@ -54,6 +54,8 @@ namespace PushSharp.Search.Query
         public AuthorFlairCssClassParameter AuthorFlairCssClass { get; set; }
         public AuthorFlairTextParameter AuthorFlairText { get; set; }
 
+        public abstract BaseRedditSearchQuery DeepClone(); // ICloneable is not recommened for public api's, here's a more explicit method
+
         /// <summary>
         /// Builds the pushshift api url from the values in this object's properties.
         /// </summary>

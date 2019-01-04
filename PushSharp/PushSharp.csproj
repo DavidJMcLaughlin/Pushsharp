@@ -50,9 +50,12 @@
     <Compile Include="Extensions\DateTimeExtensions.cs" />
     <Compile Include="Extensions\EnumerableExtensions.cs" />
     <Compile Include="Extensions\EnumExtensions.cs" />
+    <Compile Include="Extensions\ObjectExtensions.cs" />
+    <Compile Include="IRedditApiSearchAgent.cs" />
     <Compile Include="PushshiftApi.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Search\Query\BaseParameters\BooleanValueParameter.cs" />
+    <Compile Include="Search\Query\RedditQueryResult.cs" />
     <Compile Include="Search\Query\RedditParameters\LimitParameter.cs" />
     <Compile Include="Search\Query\RedditParameters\AfterIdParameter.cs" />
     <Compile Include="Search\Query\RedditParameters\AfterParameter.cs" />

@@ -20,7 +20,8 @@ namespace PushSharp.Tests
 
             var comments = searchAgent.SearchComments(new CommentSearchQuery());
 
-            Assert.AreEqual(1, comments.Count, nameof(comments));
+            Assert.IsTrue(comments.HasValue, $"{nameof(comments)} has value");
+            Assert.AreEqual(1, comments.ValueList.Count, nameof(comments));
         }
 
         [TestMethod]
@@ -30,7 +31,8 @@ namespace PushSharp.Tests
 
             var submissions = searchAgent.SearchSubmissions(new SubmissionSearchQuery());
 
-            Assert.AreEqual(1, submissions.Count, nameof(submissions));
+            Assert.IsTrue(submissions.HasValue, $"{nameof(submissions)} has value");
+            Assert.AreEqual(1, submissions.ValueList.Count, nameof(submissions));
         }
 
         [TestMethod]

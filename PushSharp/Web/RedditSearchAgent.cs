@@ -13,7 +13,7 @@ namespace PushSharp.Web
     /// <summary>
     /// This class encapsulates access to all Pushshift reddit endpoints
     /// </summary>
-    public class RedditSearchAgent
+    public class RedditSearchAgent : IRedditApiSearchAgent
     {
         public RedditSearchAgent(IRetrieveHttpContent httpContentDownloader)
         {
@@ -22,17 +22,19 @@ namespace PushSharp.Web
 
         public IRetrieveHttpContent HttpContentDownloader { get; private set; }
 
-        public List<Submission> SearchSubmissions(SubmissionSearchQuery query)
+        public RedditQueryResult<SubmissionSearchQuery, Submission> SearchSubmissions(SubmissionSearchQuery query)
         {
-            return SearchPushshift<Submission>(query);
+            return Search<SubmissionSearchQuery, Submission>(query);
         }
 
-        public List<Comment> SearchComments(CommentSearchQuery query)
+        public RedditQueryResult<CommentSearchQuery, Comment> SearchComments(CommentSearchQuery query)
         {
-            return SearchPushshift<Comment>(query);
+            return Search<CommentSearchQuery, Comment>(query);
         }
 
-        private List<T> SearchPushshift<T>(BaseRedditSearchQuery query)
+        public RedditQueryResult<T, K> Search<T, K>(T query)
+            where T : BaseRedditSearchQuery
+            where K : UserContent
         {
             if (query == null)
             {
@@ -58,7 +60,9 @@ namespace PushSharp.Web
 
             var jsonData = jo["data"].ToString();
 
-            return JsonConvert.DeserializeObject<List<T>>(jsonData);
+            var returnedApiData = JsonConvert.DeserializeObject<List<K>>(jsonData);
+
+            return new RedditQueryResult<T, K>(this, query, returnedApiData.ToArray());
         }
     }
 }

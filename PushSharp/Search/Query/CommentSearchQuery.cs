@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using PushSharp.Extensions;
 
 namespace PushSharp.Search.Query
 {
@@ -24,5 +25,10 @@ namespace PushSharp.Search.Query
         public UtcHourOfWeekParameter UtcHourOfWeek { get; set; }
         public LinkIdParameter LinkId { get; set; }
         public ParentIdParameter ParentId { get; set; }
+
+        public override BaseRedditSearchQuery DeepClone()
+        {
+            return this.CloneObjectWithIL();
+        }
     }
 }

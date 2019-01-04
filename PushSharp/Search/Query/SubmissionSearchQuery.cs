@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PushSharp.Extensions;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -16,5 +17,10 @@ namespace PushSharp.Search.Query
         }
 
         public const string RELATIVE_URL_PART = "/submission/search";
+
+        public override BaseRedditSearchQuery DeepClone()
+        {
+            return this.CloneObjectWithIL();
+        }
     }
 }
